@@ -27,7 +27,8 @@ namespace YahooFinanceData
                 Console.WriteLine("You pressed: {0}", Option.FormatOption = Console.ReadKey().KeyChar);
 
             MarketDataHandler mdh = new YahooFinanceData.MarketDataHandler();
-            mdh.FormatOutput(RequestClass.BuildRequest());
+            //Calling the BuildReuest method which sets the parameters and returns the recevied response be formatted
+            mdh.FormatOutput(RequestData.BuildRequest());
         }
     }
 }

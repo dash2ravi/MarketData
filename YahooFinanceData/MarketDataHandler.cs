@@ -16,6 +16,7 @@ namespace YahooFinanceData
 
             string[] rows = csvData.Replace("\r", "").Split('\n');
 
+            //  Iterate through each row and divide the response into columns and add it to the List of Contarcts
             foreach (string row in rows)
             {
                 try
@@ -23,8 +24,6 @@ namespace YahooFinanceData
                     if (string.IsNullOrEmpty(row)) continue;
 
                     string[] cols = row.Split(',');
-                    //string str = cols[1].Replace("\"", "");
-   
                     Contract c = new Contract();
                     c.Symbol = cols[0].Replace("\"", "");
                     c.ExchangeCode = cols[1].Replace("\"", "");
@@ -32,7 +31,6 @@ namespace YahooFinanceData
                     c.Volume = Convert.ToDecimal(cols[3]);
                     c.Change = Convert.ToDecimal(cols[4]);
                     c.Time = DateTime.Parse(cols[5].Replace("\"", ""));
-                  //  c.info = cols[6];
 
                     contracts.Add(c);
                 }
@@ -65,6 +63,7 @@ namespace YahooFinanceData
 
                             foreach (Contract con in contracts)
                             {
+                                // Retreiving the contract with the same exchange code this also be retrieved based on id or any unique field  
                                 Contract row = (Contract)contractInfo.Find(x => x.ExchangeCode.Equals(con.ExchangeCode));
                                 sw.WriteLine(string.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8} %,{9},{10}",
                                         row.Id, con.Symbol, con.ExchangeCode, row.ExchangeName, row.OpenTime, row.CloseTime, con.LastPrice, con.Volume, con.Change, con.Time.TimeOfDay,
@@ -84,6 +83,8 @@ namespace YahooFinanceData
 
         public static List<Contract> LoadContractInfo(List<Contract> conInfo)
         {
+
+            // Loading up info from contract file to the list of contracts
             using (StreamReader sr = new StreamReader(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"Entities\ContractInfo.txt")))
             {
                 string temp;

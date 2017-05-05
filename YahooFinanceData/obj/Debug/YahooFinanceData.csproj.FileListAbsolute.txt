@@ -1,7 +1,6 @@
 c:\users\chitra\documents\visual studio 2015\Projects\YahooFinanceData\YahooFinanceData\bin\Debug\YahooFinanceData.exe.config
 c:\users\chitra\documents\visual studio 2015\Projects\YahooFinanceData\YahooFinanceData\bin\Debug\YahooFinanceData.exe
 c:\users\chitra\documents\visual studio 2015\Projects\YahooFinanceData\YahooFinanceData\bin\Debug\YahooFinanceData.pdb
-c:\users\chitra\documents\visual studio 2015\Projects\YahooFinanceData\YahooFinanceData\obj\Debug\YahooFinanceData.csprojResolveAssemblyReference.cache
 c:\users\chitra\documents\visual studio 2015\Projects\YahooFinanceData\YahooFinanceData\obj\Debug\YahooFinanceData.exe
 c:\users\chitra\documents\visual studio 2015\Projects\YahooFinanceData\YahooFinanceData\obj\Debug\YahooFinanceData.pdb
 c:\users\chitra\documents\visual studio 2015\Projects\YahooFinanceData\YahooFinanceData\bin\Debug\Newtonsoft.Json.dll

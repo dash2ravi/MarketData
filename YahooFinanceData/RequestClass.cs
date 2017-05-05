@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace YahooFinanceData
 {
-    public static class RequestClass
+    public static class RequestData
     {
         public static List<Contract> BuildRequest()
         {
@@ -17,6 +17,7 @@ namespace YahooFinanceData
 
             string filePath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"Entities\MarketList.txt");
 
+            // Iterate through the list of markets present in the file
             using (StreamReader sr = new StreamReader(filePath))
             {
                 string temp;
@@ -29,11 +30,13 @@ namespace YahooFinanceData
                 marketList.Append("&");
             }
 
+            // Set the url with parameters including symbols and the fields required
             using (WebClient web = new WebClient())
             {
                 MarketData = web.DownloadString("http://finance.yahoo.com/d/quotes.csv?s=" + marketList + "f=sxl1vc1t1t1");
             }
 
+            // Parse the response and return it
             MarketDataHandler mdh = new YahooFinanceData.MarketDataHandler();
             return (mdh.ParseResponse(MarketData));
             
@@ -41,3 +44,4 @@ namespace YahooFinanceData
         
     }
 }
+

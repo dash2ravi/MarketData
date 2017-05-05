@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace YahooFinanceData
 {
@@ -27,8 +23,5 @@ namespace YahooFinanceData
             throw new NotImplementedException();
         }
     }
-    public static class Option
-    {
-        public static char  FormatOption { get; set; }
-    }
+   
 }
