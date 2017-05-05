@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
 
 namespace YahooFinanceData
 {
     public interface IMarketdata
     {
-        List<Contract> ProcessResponse(string data);
+        List<Contract> ParseResponse(string data);
+        void FormatOutput(List<Contract> con);
+
     }
 }

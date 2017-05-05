@@ -1,0 +1,5 @@
+Id,Symbol,ExchangeCode,ExchangeName,OpenTime,CloseTime,Timezone
+1,^FTSE,FSI,London Stock Exchange Group,8:00:00,16:30:00,GMT
+2,WALLX,NAS,NASDAQ,9:30:00 AM,16:00:00,EST
+3,AAPL,NMS,NASDAQ,9:30:00,16:00:00,EST
+4,NYT,NYQ,New York Stock Exchange,9:30:00,16:00:00,EST
